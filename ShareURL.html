@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Share URL</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+            background-color: #f5f5f5;
+        }
+        h1 {
+            color: #333;
+        }
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .share-links {
+            margin-top: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .share-links a, .share-links button {
+            display: inline-block;
+            background-color: #007bff;
+            color: #fff;
+            text-decoration: none;
+            padding: 10px 20px;
+            margin: 10px;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        .share-links a:hover, .share-links button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Share This URL</h1>
+
+    <div class="share-links">
+        <!-- Create a hyperlink to share on WhatsApp -->
+        <a href="https://wa.me/?text=https://forms.gle/1kjqEQHEZPCE93Hf6" target="_blank">Share on WhatsApp</a>
+
+        <!-- Button to open email client -->
+        <button onclick="shareByEmail()">Share via Email</button>
+
+        <!-- Create a hyperlink to share on Facebook -->
+        <a href="https://www.facebook.com/sharer/sharer.php?u=https://forms.gle/1kjqEQHEZPCE93Hf6" target="_blank">Share on Facebook</a>
+
+        <!-- Create a form to share on SMS -->
+        <form action="sms:" method="post">
+            <input type="hidden" name="body" value="https://forms.gle/1kjqEQHEZPCE93Hf6">
+            <button type="submit">Share via SMS</button>
+        </form>
+    </div>
+</div>
+
+<script>
+    function shareByEmail() {
+        var subject = "Check out this awesome form!";
+        var body = "https://forms.gle/1kjqEQHEZPCE93Hf6";
+        var mailtoLink = "mailto:?subject=" + encodeURIComponent(subject) + "&body=" + encodeURIComponent(body);
+        window.location.href = mailtoLink;
+    }
+</script>
+
+</body>
+</html>

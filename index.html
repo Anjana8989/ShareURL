@@ -57,14 +57,27 @@ h1 {
   <div class="share-links">
     <!-- WhatsApp -->
     <button onclick="window.location.href='whatsapp://send?text=Register%20yourself%20in%20SLC%20Hindi%202024%20via%20this%20Google%20Form:%20https://forms.gle/1kjqEQHEZPCE93Hf6'">WhatsApp</button>
-    <!-- Signal -->
-    <a href="https://signal.me/#" target="_blank" rel="noopener noreferrer"><button>Signal</button></a>
+    <!-- Copy the link -->
+    <button onclick="copyLink()">Copy the link</button>
     <!-- Telegram -->
     <button onclick="window.location.href='https://t.me/share/url?url=Register%20yourself%20in%20SLC%20Hindi%202024%20via%20this%20Google%20Form:%20https://forms.gle/1kjqEQHEZPCE93Hf6'">Telegram</button>
     <!-- Email -->
     <button onclick="window.location.href='mailto:?subject=SLC%20Hindi%20Registration%20Form&body=Register%20yourself%20in%20SLC%20Hindi%202024%20via%20this%20Google%20Form:%20https://forms.gle/1kjqEQHEZPCE93Hf6'">Email</button>
   </div>
 </div>
+
+<script>
+function copyLink() {
+  var formLink = "https://forms.gle/1kjqEQHEZPCE93Hf6"; // Replace with your form link
+  var introductionText = "Register yourself in SLC Hindi 2024 via this Google Form"; // Replace with your introduction text
+  var copyText = introductionText + "\n" + formLink;
+  navigator.clipboard.writeText(copyText).then(function() {
+    alert("Introduction text and form link copied!");
+  }, function() {
+    alert("Failed to copy introduction text and form link.");
+  });
+}
+</script>
 
 </body>
 </html>
